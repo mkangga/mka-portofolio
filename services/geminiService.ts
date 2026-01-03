@@ -10,14 +10,7 @@ let chatSession: Chat | null = null;
 export const initializeChat = (): Chat => {
   if (chatSession) return chatSession;
 
-  // Cek apakah API_KEY tersedia untuk mencegah crash di browser
-  const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : '';
-  
-  if (!apiKey) {
-    console.warn("API_KEY tidak ditemukan di environment variables.");
-  }
-
-  const ai = new GoogleGenAI({ apiKey: apiKey || 'temporary_key' });
+  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
   
   chatSession = ai.chats.create({
     model: 'gemini-3-flash-preview',

@@ -10,7 +10,6 @@ import FluidBackground from './components/FluidBackground';
 import GradientText from './components/GlitchText';
 import CustomCursor from './components/CustomCursor';
 import ProjectCard from './components/ProjectCard';
-import AIChat from './components/AIChat';
 import { Project, PageType } from './types';
 
 const PROJECTS: Project[] = [
@@ -20,7 +19,7 @@ const PROJECTS: Project[] = [
   { id: '4', title: 'Chroma OS', category: 'System Design', year: '2023', image: 'https://images.unsplash.com/photo-1510519138101-570d1dca3d66?q=80&w=1000&auto=format&fit=crop', description: 'A web-based operating system concept focusing on accessibility.' },
 ];
 
-const PageWrapper = ({ children }: { children: React.ReactNode }) => (
+const PageWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -44,7 +43,7 @@ const App: React.FC = () => {
     <div className="relative min-h-screen text-white selection:bg-cyan-400 selection:text-black cursor-none overflow-x-hidden bg-[#0a0a0a]">
       <CustomCursor />
       <FluidBackground />
-      <AIChat />
+      {/* AIChat component removed */}
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-8 mix-blend-difference">
         <button onClick={() => setCurrentPage('home')} className="font-heading text-2xl font-bold tracking-tighter" data-hover="true">
