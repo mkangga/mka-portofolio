@@ -1,32 +1,25 @@
-import React, { useState } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Home, Briefcase, User, Mail } from 'lucide-react';
 
 const Navbar: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
-
   const links = [
-    { path: '/', label: 'Home' },
-    { path: '/work', label: 'Work' },
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
+    { path: '/', label: 'Home', icon: Home },
+    { path: '/work', label: 'Work', icon: Briefcase },
+    { path: '/about', label: 'About', icon: User },
+    { path: '/contact', label: 'Contact', icon: Mail },
   ];
-
-  // Close menu when route changes
-  React.useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
 
   return (
     <>
+      {/* Desktop Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-8 mix-blend-difference">
         <NavLink to="/" className="font-heading text-2xl font-bold tracking-tighter group z-50 relative">
           MKA<span className="text-cyan-400 group-hover:animate-pulse">.</span>DEV
         </NavLink>
 
-        {/* Desktop Menu */}
+        {/* Desktop Menu Links */}
         <div className="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.4em] uppercase">
           {links.map((link) => (
             <NavLink
@@ -61,49 +54,40 @@ const Navbar: React.FC = () => {
           <span className="relative z-10">Connect</span>
           <div className="absolute inset-0 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 -z-0 mix-blend-difference"></div>
         </NavLink>
-
-        {/* Mobile Menu Toggle */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden z-50 text-white p-2"
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </nav>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="fixed inset-0 z-40 bg-black/95 backdrop-blur-xl flex flex-col items-center justify-center md:hidden"
-          >
-            <div className="flex flex-col gap-8 text-center">
-              {links.map((link, index) => (
-                <motion.div
-                  key={link.path}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                >
-                  <NavLink
-                    to={link.path}
-                    className={({ isActive }) =>
-                      `text-2xl font-bold uppercase tracking-widest transition-colors ${
-                        isActive ? 'text-cyan-400' : 'text-white/60 hover:text-white'
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Mobile Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-t border-white/10 md:hidden pb-safe">
+        <div className="flex justify-around items-center h-16">
+          {links.map((link) => (
+            <NavLink
+              key={link.path}
+              to={link.path}
+              className={({ isActive }) =>
+                `flex flex-col items-center justify-center w-full h-full transition-colors ${
+                  isActive ? 'text-cyan-400' : 'text-white/40 hover:text-white/70'
+                }`
+              }
+            >
+              {({ isActive }) => (
+                <>
+                  <div className="relative p-1">
+                    <link.icon size={20} strokeWidth={isActive ? 2.5 : 2} />
+                    {isActive && (
+                      <motion.div
+                        layoutId="mobileNavGlow"
+                        className="absolute inset-0 bg-cyan-400/20 blur-lg rounded-full"
+                        transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                      />
+                    )}
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider mt-1">{link.label}</span>
+                </>
+              )}
+            </NavLink>
+          ))}
+        </div>
+      </nav>
     </>
   );
 };

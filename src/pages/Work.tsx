@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowUpRight, X } from 'lucide-react';
+import { ArrowUpRight, X, User, ShoppingBag, Globe, Gift } from 'lucide-react';
 
 interface Project {
   id: string;
   title: string;
   category: string;
   year: string;
-  image: string;
+  icon: React.ElementType;
   description: string;
   tags: string[];
   link: string;
@@ -19,7 +19,7 @@ const PROJECTS: Project[] = [
     title: 'Self Portfolio', 
     category: 'Personal Identity', 
     year: '2025', 
-    image: 'https://picsum.photos/seed/portfolio/1000/800', 
+    icon: User, 
     description: 'A personal showcase of my journey as an AI Vibe Coder. Built with modern web technologies to reflect my digital identity and creative vision.',
     tags: ['React', 'Tailwind CSS', 'Framer Motion', 'Vite'],
     link: 'https://www.mka.my.id/'
@@ -29,7 +29,7 @@ const PROJECTS: Project[] = [
     title: 'MKA Store', 
     category: 'E-Commerce', 
     year: '2024', 
-    image: 'https://picsum.photos/seed/store/1000/800', 
+    icon: ShoppingBag, 
     description: 'A streamlined e-commerce platform designed for digital goods. Focusing on speed, simplicity, and user experience.',
     tags: ['Web App', 'Payment Gateway', 'UI/UX', 'React'],
     link: 'https://www.mkastore.my.id/'
@@ -39,10 +39,20 @@ const PROJECTS: Project[] = [
     title: 'Solar System', 
     category: 'Simulation', 
     year: '2024', 
-    image: 'https://picsum.photos/seed/space/1000/800', 
+    icon: Globe, 
     description: 'An interactive 3D simulation of our solar system. A journey through the cosmos powered by web technologies.',
     tags: ['3D', 'Simulation', 'Educational', 'Interactive'],
     link: 'https://tatasurya.mka.my.id/'
+  },
+  { 
+    id: '4', 
+    title: 'Gift Box Website', 
+    category: 'Interactive Experience', 
+    year: '2024', 
+    icon: Gift, 
+    description: 'A secure gift box experience where users unlock surprises using unique credentials. Features database-backed authentication for personalized reveals.',
+    tags: ['Database', 'Authentication', 'Interactive', 'React'],
+    link: 'https://hadiah.mka.my.id/'
   }
 ];
 
@@ -50,7 +60,7 @@ const Work: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className="pt-12">
+    <div className="pt-12 pb-24 md:pb-12">
       <motion.h1 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -59,7 +69,7 @@ const Work: React.FC = () => {
         WORK
       </motion.h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto px-4 md:px-0">
         {PROJECTS.map((project, index) => (
           <motion.div
             key={project.id}
@@ -68,13 +78,14 @@ const Work: React.FC = () => {
             viewport={{ once: true }}
             transition={{ delay: index * 0.1 }}
             onClick={() => setSelectedProject(project)}
-            className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl bg-white/5 border border-white/10"
+            className="group relative aspect-[4/3] cursor-pointer overflow-hidden rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center"
           >
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors z-10" />
-            <img 
-              src={project.image} 
-              alt={project.title} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
+            
+            {/* Icon Display */}
+            <project.icon 
+              strokeWidth={1}
+              className="w-32 h-32 text-white/20 group-hover:text-cyan-400/50 group-hover:scale-110 transition-all duration-500" 
             />
             
             <div className="absolute inset-0 z-20 p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
@@ -103,62 +114,74 @@ const Work: React.FC = () => {
             animate={{ opacity: 1 }} 
             exit={{ opacity: 0 }} 
             onClick={() => setSelectedProject(null)} 
-            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl flex items-center justify-center p-6"
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-xl flex items-end md:items-center justify-center p-0 md:p-6"
           >
             <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-[#111] max-w-5xl w-full max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 relative" 
+              initial={{ y: "100%", opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: "100%", opacity: 0 }}
+              transition={{ type: "spring", damping: 25, stiffness: 300 }}
+              className="bg-[#111] w-full md:max-w-5xl h-[95vh] md:h-auto md:max-h-[90vh] overflow-y-auto rounded-t-3xl md:rounded-3xl border-t md:border border-white/10 relative flex flex-col" 
               onClick={e => e.stopPropagation()}
             >
               <button 
                 onClick={() => setSelectedProject(null)} 
-                className="absolute top-6 right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
+                className="absolute top-4 right-4 md:top-6 md:right-6 p-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors z-50"
               >
                 <X size={24} />
               </button>
 
-              <div className="h-[40vh] md:h-[50vh] relative">
-                <img src={selectedProject.image} className="w-full h-full object-cover" alt={selectedProject.title} />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#111] to-transparent" />
-                <div className="absolute bottom-8 left-8 md:left-12">
-                  <h2 className="text-5xl md:text-7xl font-black mb-2">{selectedProject.title}</h2>
-                  <p className="text-cyan-400 text-lg uppercase tracking-widest font-bold">{selectedProject.category}</p>
+              <div className="h-[25vh] md:h-[40vh] relative shrink-0 bg-gradient-to-br from-gray-900 to-black flex items-center justify-center overflow-hidden">
+                <selectedProject.icon 
+                  strokeWidth={0.5}
+                  className="w-48 h-48 md:w-64 md:h-64 text-white/5 absolute transform rotate-12" 
+                />
+                <selectedProject.icon 
+                  strokeWidth={1}
+                  className="w-24 h-24 md:w-32 md:h-32 text-cyan-400 relative z-10 drop-shadow-[0_0_15px_rgba(34,211,238,0.5)]" 
+                />
+                
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111] via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 md:bottom-8 md:left-12 z-20">
+                  <h2 className="text-3xl md:text-6xl font-black mb-2 leading-tight">{selectedProject.title}</h2>
+                  <p className="text-cyan-400 text-sm md:text-lg uppercase tracking-widest font-bold">{selectedProject.category}</p>
                 </div>
               </div>
 
-              <div className="p-8 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="p-6 md:p-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 pb-24 md:pb-12">
                 <div className="md:col-span-2">
-                  <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-white/40">Overview</h3>
-                  <p className="text-xl leading-relaxed text-white/80 mb-8">
+                  <h3 className="text-sm md:text-xl font-bold mb-4 uppercase tracking-wider text-white/40">Overview</h3>
+                  <p className="text-base md:text-xl leading-relaxed text-white/80 mb-8">
                     {selectedProject.description}
                   </p>
                   
-                  <h3 className="text-xl font-bold mb-4 uppercase tracking-wider text-white/40">Technologies</h3>
-                  <div className="flex flex-wrap gap-3">
+                  <h3 className="text-sm md:text-xl font-bold mb-4 uppercase tracking-wider text-white/40">Technologies</h3>
+                  <div className="flex flex-wrap gap-2 md:gap-3">
                     {selectedProject.tags.map(tag => (
-                      <span key={tag} className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm font-mono text-cyan-400">
+                      <span key={tag} className="px-3 py-1 md:px-4 md:py-2 bg-white/5 border border-white/10 rounded-full text-xs md:text-sm font-mono text-cyan-400">
                         {tag}
                       </span>
                     ))}
                   </div>
                 </div>
 
-                <div className="space-y-8">
-                  <div>
-                    <h3 className="text-sm font-bold mb-2 uppercase tracking-wider text-white/40">Year</h3>
-                    <p className="text-2xl font-mono">{selectedProject.year}</p>
+                <div className="space-y-6 md:space-y-8">
+                  <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+                    <div>
+                      <h3 className="text-xs md:text-sm font-bold mb-1 md:mb-2 uppercase tracking-wider text-white/40">Year</h3>
+                      <p className="text-lg md:text-2xl font-mono">{selectedProject.year}</p>
+                    </div>
+                    <div>
+                      <h3 className="text-xs md:text-sm font-bold mb-1 md:mb-2 uppercase tracking-wider text-white/40">Role</h3>
+                      <p className="text-lg md:text-xl">Lead Developer</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold mb-2 uppercase tracking-wider text-white/40">Role</h3>
-                    <p className="text-xl">Lead Developer</p>
-                  </div>
+                  
                   <a 
                     href={selectedProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-cyan-400 transition-colors block text-center"
+                    className="w-full py-4 bg-white text-black font-bold uppercase tracking-widest hover:bg-cyan-400 transition-colors block text-center rounded-xl md:rounded-none"
                   >
                     View Live
                   </a>
