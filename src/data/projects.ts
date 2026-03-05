@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -52,5 +52,25 @@ export const PROJECTS: Project[] = [
     description: 'A secure gift box experience where users unlock surprises using unique credentials. Features database-backed authentication for personalized reveals.',
     tags: ['Database', 'Authentication', 'Interactive', 'React'],
     link: 'https://hadiah.mka.my.id/'
+  },
+  { 
+    id: '5', 
+    title: 'Nusantara Merdeka', 
+    category: 'Alternate History', 
+    year: '2026', 
+    icon: Flag, 
+    description: 'Bagaimana jika Indonesia tidak pernah dijajah? Sebuah eksplorasi visual dan naratif tentang sejarah alternatif Nusantara yang berdaulat penuh.',
+    tags: ['Storytelling', 'History', 'Interactive', 'Web Design'],
+    link: 'http://nusantaramerdeka.mka.my.id/'
+  },
+  { 
+    id: '6', 
+    title: 'Kolonisasi Mars', 
+    category: 'Space Exploration', 
+    year: '2026', 
+    icon: Rocket, 
+    description: 'Dari mimpi Jules Verne hingga roket SpaceX — umat manusia bersiap menjadi spesies multiplanet. Visualisasi perjalanan manusia menuju Planet Merah.',
+    tags: ['Space', 'Science', 'Visualization', 'Future'],
+    link: 'https://koloni-mars.mka.my.id/'
   }
 ];
