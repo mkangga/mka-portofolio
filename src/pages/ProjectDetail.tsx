@@ -91,6 +91,17 @@ const ProjectDetail: React.FC = () => {
             </div>
           </div>
         </motion.div>
+
+        {/* CTA Section */}
+        <div className="mt-24 text-center">
+          <h2 className="text-3xl md:text-5xl font-black mb-8">Interested in working together?</h2>
+          <Link 
+            to="/contact"
+            className="inline-block px-12 py-4 border border-white/20 rounded-full text-lg font-bold uppercase tracking-widest hover:bg-white hover:text-black hover:border-white transition-all duration-300"
+          >
+            Let's Talk
+          </Link>
+        </div>
       </div>
     </div>
   );

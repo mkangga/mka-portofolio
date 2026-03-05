@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Database, Globe, Layers, Cpu, Zap } from 'lucide-react';
+import TechStack from '../components/TechStack';
 
 const About: React.FC = () => {
   const skills = [
@@ -12,7 +13,7 @@ const About: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto pt-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
@@ -77,6 +78,8 @@ const About: React.FC = () => {
           ))}
         </motion.div>
       </div>
+
+      <TechStack />
     </div>
   );
 };

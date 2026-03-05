@@ -1,74 +1,68 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
-*/
-
-
 import React, { useEffect, useState } from 'react';
-import { motion, useSpring, useMotionValue } from 'framer-motion';
+import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 const CustomCursor: React.FC = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
   
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
-  
-  const springConfig = { damping: 30, stiffness: 400, mass: 0.5 }; 
-  const x = useSpring(mouseX, springConfig);
-  const y = useSpring(mouseY, springConfig);
+  const springConfig = { damping: 25, stiffness: 700 };
+  const cursorXSpring = useSpring(cursorX, springConfig);
+  const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
-
-      const target = e.target as HTMLElement;
-      const clickable = target.closest('button') || 
-                        target.closest('a') || 
-                        target.closest('[data-hover="true"]');
-      setIsHovering(!!clickable);
+    const moveCursor = (e: MouseEvent) => {
+      cursorX.set(e.clientX - 16);
+      cursorY.set(e.clientY - 16);
     };
 
-    window.addEventListener('mousemove', updateMousePosition, { passive: true });
-    return () => window.removeEventListener('mousemove', updateMousePosition);
-  }, [mouseX, mouseY]);
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName === 'A' || 
+        target.tagName === 'BUTTON' || 
+        target.closest('a') || 
+        target.closest('button') ||
+        target.classList.contains('cursor-pointer')
+      ) {
+        setIsHovering(true);
+      } else {
+        setIsHovering(false);
+      }
+    };
+
+    window.addEventListener('mousemove', moveCursor);
+    window.addEventListener('mouseover', handleMouseOver);
+
+    return () => {
+      window.removeEventListener('mousemove', moveCursor);
+      window.removeEventListener('mouseover', handleMouseOver);
+    };
+  }, [cursorX, cursorY]);
+
+  // Hide on mobile/touch devices
+  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+    return null;
+  }
 
   return (
     <motion.div
-      className="fixed top-0 left-0 z-[9999] pointer-events-none mix-blend-difference hidden md:flex items-center justify-center"
-      style={{ x, y, translateX: '-50%', translateY: '-50%' }}
+      className="fixed top-0 left-0 w-8 h-8 rounded-full border border-cyan-400 pointer-events-none z-[9999] mix-blend-difference"
+      style={{
+        translateX: cursorXSpring,
+        translateY: cursorYSpring,
+      }}
+      animate={{
+        scale: isHovering ? 1.5 : 1,
+        backgroundColor: isHovering ? 'rgba(34, 211, 238, 0.2)' : 'transparent',
+      }}
     >
-      {/* External Ring */}
-      <motion.div
-        className="absolute w-12 h-12 rounded-full border border-white/50"
-        animate={{
-          scale: isHovering ? 2.5 : 1,
-          opacity: isHovering ? 1 : 0.5,
-          borderColor: isHovering ? 'rgba(34,211,238,1)' : 'rgba(255,255,255,0.5)',
-        }}
-        transition={{ type: "spring", stiffness: 200, damping: 20 }}
-      />
-
-      {/* Internal Dot */}
-      <motion.div
-        className="w-1.5 h-1.5 rounded-full bg-cyan-400"
+      <motion.div 
+        className="absolute top-1/2 left-1/2 w-1 h-1 bg-cyan-400 rounded-full -translate-x-1/2 -translate-y-1/2"
         animate={{
           scale: isHovering ? 0 : 1,
-          opacity: isHovering ? 0 : 1,
         }}
       />
-
-      {/* "View" Text */}
-      <motion.span 
-        className="absolute text-[8px] font-mono text-white font-black uppercase tracking-[0.2em] pointer-events-none"
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ 
-          opacity: isHovering ? 1 : 0,
-          scale: isHovering ? 1 : 0.5,
-        }}
-      >
-        ACCESS
-      </motion.span>
     </motion.div>
   );
 };
