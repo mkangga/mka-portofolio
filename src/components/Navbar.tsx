@@ -1,12 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, Briefcase, User, Mail } from 'lucide-react';
+import { Home, Briefcase, User, Mail, Layers } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const links = [
     { path: '/', label: 'Home', icon: Home },
     { path: '/work', label: 'Work', icon: Briefcase },
+    { path: '/services', label: 'Services', icon: Layers },
     { path: '/about', label: 'About', icon: User },
     { path: '/contact', label: 'Contact', icon: Mail },
   ];

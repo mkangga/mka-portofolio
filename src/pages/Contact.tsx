@@ -27,7 +27,10 @@ const Contact: React.FC = () => {
         className="text-center mb-16"
       >
         <h1 className="text-6xl md:text-8xl font-black mb-4">GET IN TOUCH</h1>
-        <p className="text-white/40 uppercase tracking-widest">Protocol: Handshake_Request</p>
+        <p className="text-white/40 uppercase tracking-widest">Protocol: Handshake_Request // Project_Inquiry</p>
+        <p className="mt-4 text-white/60 max-w-xl mx-auto">
+          Ready to start your next project? Whether it's a new website, a UI/UX redesign, or an AI integration, I'm here to help.
+        </p>
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

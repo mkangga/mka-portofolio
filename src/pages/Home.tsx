@@ -27,8 +27,8 @@ const Home: React.FC = () => {
               View Projects <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
-          <Link to="/about" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
-            About Me
+          <Link to="/services" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
+            My Services
           </Link>
         </div>
       </motion.div>
@@ -36,8 +36,8 @@ const Home: React.FC = () => {
       <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
         {[
           { icon: Cpu, title: "Prompt Engineer", desc: "Crafting precise instructions for optimal AI generation." },
-          { icon: Code, title: "Rapid Prototyper", desc: "Turning ideas into reality at the speed of thought." },
-          { icon: Fingerprint, title: "AI Explorer", desc: "Constantly learning and adapting to new AI tools." }
+          { icon: Code, title: "Web Developer", desc: "Building high-performance websites and applications." },
+          { icon: Fingerprint, title: "UI/UX Designer", desc: "Designing intuitive and engaging user experiences." }
         ].map((item, index) => (
           <motion.div
             key={index}
