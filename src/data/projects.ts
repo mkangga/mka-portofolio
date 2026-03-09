@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -86,5 +86,29 @@ export const PROJECTS: Project[] = [
     tags: ['Space', 'Science', 'Visualization', 'Future'],
     link: 'https://koloni-mars.mka.my.id/',
     image: 'https://picsum.photos/seed/mars/800/600'
+  },
+  { 
+    id: '7', 
+    title: 'Digital Gift Box', 
+    category: 'Interactive Experience',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Gift, 
+    description: 'Create magical, personalized digital gift experiences for your loved ones.',
+    tags: ['Interactive', 'Personalized', 'Web App'],
+    link: 'https://gift.mka.my.id/',
+    image: 'https://picsum.photos/seed/gift2/800/600'
+  },
+  { 
+    id: '8', 
+    title: 'Random Wheel Picker', 
+    category: 'Utility',
+    role: 'Frontend Developer',
+    year: '2026', 
+    icon: CircleDot, 
+    description: 'A fun and interactive random wheel picker for decision making.',
+    tags: ['Utility', 'Interactive', 'Tool'],
+    link: 'https://wheel.mka.my.id/',
+    image: 'https://picsum.photos/seed/wheel/800/600'
   }
 ];
