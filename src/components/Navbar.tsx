@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Home, Briefcase, User, Mail, Layers, Share2 } from 'lucide-react';
 
 const Navbar: React.FC = () => {
@@ -61,7 +61,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-t border-white/10 md:hidden pb-safe">
         <div className="flex justify-around items-center h-16">
-          {links.filter(link => link.label !== 'Connect').map((link) => (
+          {links.filter(link => link.label !== 'Contact').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}

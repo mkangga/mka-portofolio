@@ -49,11 +49,10 @@ const Connect: React.FC = () => {
     {
       name: 'Twitter / X',
       icon: Twitter,
-      url: '#',
+      url: 'https://x.com/mka_dev',
       username: '@mka_dev',
-      color: 'text-white/20',
-      bgColor: 'bg-white/5',
-      disabled: true
+      color: 'hover:text-sky-400',
+      bgColor: 'bg-sky-400/5'
     }
   ];
 
@@ -64,7 +63,7 @@ const Connect: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-6xl md:text-8xl font-black mb-4 uppercase tracking-tighter">
+        <h1 className="text-xl sm:text-6xl md:text-8xl font-black mb-4 uppercase tracking-tighter">
           CONNECT<span className="text-cyan-400">_</span>HUB
         </h1>
         <p className="text-white/40 uppercase tracking-[0.3em] text-sm">

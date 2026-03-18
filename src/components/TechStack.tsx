@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Code, Database, Layout, Server, Globe, Terminal } from 'lucide-react';
 
 const TechStack: React.FC = () => {

@@ -15,7 +15,7 @@ const Home: React.FC = () => {
         <h2 className="text-xl md:text-3xl font-heading font-light uppercase tracking-[0.3em] opacity-60 mb-4">
           Muhammad Karim Anggara
         </h2>
-        <GradientText text="AI VIBE CODER" as="h1" className="text-[12vw] md:text-[8vw] leading-none mb-8" />
+        <GradientText text="AI VIBE CODER" as="h1" className="text-2xl sm:text-6xl md:text-[8vw] leading-none mb-8" />
         
         <p className="max-w-2xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-12">
           Leveraging AI to build the web of tomorrow. Exploring the intersection of human creativity and artificial intelligence.

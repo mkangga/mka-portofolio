@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 import { Terminal, Database, Globe, Layers, Cpu, Zap } from 'lucide-react';
 import TechStack from '../components/TechStack';
 

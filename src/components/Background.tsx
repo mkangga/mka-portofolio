@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
+import { motion } from 'motion/react';
 
 const Background: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);

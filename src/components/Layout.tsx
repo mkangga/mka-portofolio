@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './Navbar';
 import FluidBackground from './FluidBackground';
 import CustomCursor from './CustomCursor';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence } from 'motion/react';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
