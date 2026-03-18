@@ -13,6 +13,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Services from './pages/Services';
 import Contact from './pages/Contact';
+import Connect from './pages/Connect';
 import ProjectDetail from './pages/ProjectDetail';
 import NotFound from './pages/NotFound';
 import SEO from './components/SEO';
@@ -25,13 +26,14 @@ const AnimatedRoutes: React.FC = () => {
 
   return (
     <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
+      <Routes location={location}>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/work" element={<Work />} />
         <Route path="/work/:id" element={<ProjectDetail />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/connect" element={<Connect />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </AnimatePresence>

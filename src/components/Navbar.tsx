@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Home, Briefcase, User, Mail, Layers } from 'lucide-react';
+import { Home, Briefcase, User, Mail, Layers, Share2 } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const links = [
@@ -9,6 +9,7 @@ const Navbar: React.FC = () => {
     { path: '/work', label: 'Work', icon: Briefcase },
     { path: '/services', label: 'Services', icon: Layers },
     { path: '/about', label: 'About', icon: User },
+    { path: '/connect', label: 'Connect', icon: Share2 },
     { path: '/contact', label: 'Contact', icon: Mail },
   ];
 
@@ -22,7 +23,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu Links */}
         <div className="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.4em] uppercase">
-          {links.map((link) => (
+          {links.filter(link => link.label !== 'Connect').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
@@ -49,7 +50,7 @@ const Navbar: React.FC = () => {
         </div>
 
         <NavLink
-          to="/contact"
+          to="/connect"
           className="px-6 py-2 border border-white/20 text-[10px] font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all hidden md:block relative overflow-hidden group"
         >
           <span className="relative z-10">Connect</span>
@@ -60,7 +61,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Bottom Navigation */}
       <nav className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-t border-white/10 md:hidden pb-safe">
         <div className="flex justify-around items-center h-16">
-          {links.map((link) => (
+          {links.filter(link => link.label !== 'Connect').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
