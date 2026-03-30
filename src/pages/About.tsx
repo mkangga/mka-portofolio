@@ -2,11 +2,8 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Terminal, Database, Globe, Layers, Cpu, Zap } from 'lucide-react';
 import TechStack from '../components/TechStack';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const About: React.FC = () => {
-  const { t } = useThemeLanguage();
-
   const skills = [
     { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "React (Learning)", "Tailwind CSS"], icon: Globe },
     { category: "AI Tools", items: ["ChatGPT", "Claude", "Gemini", "V0", "Bolt.new"], icon: Zap },
@@ -23,21 +20,21 @@ const About: React.FC = () => {
           transition={{ duration: 0.6 }}
         >
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-6xl xl:text-7xl font-black mb-8 leading-none tracking-tighter">
-            {t('about.title1')} <br/><span className="text-cyan-400">{t('about.title2')}</span>
+            DECODING <br/><span className="text-cyan-400">THE VIBE</span>
           </h1>
           <div className="space-y-6 text-lg text-theme-text-muted leading-relaxed font-light">
-            <p dangerouslySetInnerHTML={{ __html: t('about.p1') }} />
-            <p>{t('about.p2')}</p>
-            <p>{t('about.p3')}</p>
+            <p dangerouslySetInnerHTML={{ __html: 'I am <strong class="text-white">Muhammad Karim Anggara</strong>, a beginner AI Vibe Coder. My journey is just beginning, but my vision is clear: to leverage the power of Artificial Intelligence to bring digital ideas to life.' }} />
+            <p>I may be new to the game, but I specialize in orchestrating AI tools to build functional, beautiful websites. I believe that with the right prompts and a creative mindset, anyone can become a creator in this new digital era.</p>
+            <p>I'm constantly learning, experimenting, and pushing the boundaries of what an "AI Vibe Coder" can achieve.</p>
           </div>
 
           <div className="mt-12 p-6 bg-theme-text-dim/5 border border-theme-border rounded-xl font-mono text-sm text-cyan-400/80">
             <div className="flex items-center gap-2 mb-4 text-theme-text-dim uppercase tracking-widest text-xs">
-              <Terminal size={14} /> {t('about.status')}
+              <Terminal size={14} /> Current Status
             </div>
-            <p>{t('about.status1')}</p>
-            <p>{t('about.status2')}</p>
-            <p>{t('about.status3')}</p>
+            <p>{'> learning_mode: active'}</p>
+            <p>{'> exploring_ai_capabilities...'}</p>
+            <p>{'> status: building_the_future.'}</p>
           </div>
         </motion.div>
 

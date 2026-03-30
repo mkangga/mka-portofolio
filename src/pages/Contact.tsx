@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Github, Send } from 'lucide-react';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Contact: React.FC = () => {
-  const { t } = useThemeLanguage();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -22,16 +20,16 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto pt-12">
+    <div className="max-w-4xl mx-auto pt-12 pb-20">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-6xl md:text-8xl font-black mb-4 text-theme-text">{t('contact.title')}</h1>
-        <p className="text-theme-text-dim uppercase tracking-widest">{t('contact.subtitle')}</p>
+        <h1 className="text-5xl md:text-8xl font-black mb-4 text-theme-text">CONTACT</h1>
+        <p className="text-theme-text-dim uppercase tracking-widest">Let's build something together</p>
         <p className="mt-4 text-theme-text-muted max-w-xl mx-auto">
-          {t('contact.desc')}
+          Have a project in mind or just want to say hi? Feel free to reach out.
         </p>
       </motion.div>
 
@@ -64,7 +62,7 @@ const Contact: React.FC = () => {
           className="space-y-6"
         >
           <div>
-            <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.name')}</label>
+            <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">Name</label>
             <input
               type="text"
               id="name"
@@ -72,11 +70,11 @@ const Contact: React.FC = () => {
               value={formState.name}
               onChange={e => setFormState({ ...formState, name: e.target.value })}
               className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors"
-              placeholder={t('contact.name_placeholder')}
+              placeholder="Your Name"
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.email')}</label>
+            <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">Email</label>
             <input
               type="email"
               id="email"
@@ -84,11 +82,11 @@ const Contact: React.FC = () => {
               value={formState.email}
               onChange={e => setFormState({ ...formState, email: e.target.value })}
               className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors"
-              placeholder={t('contact.email_placeholder')}
+              placeholder="Your Email"
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.message')}</label>
+            <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">Message</label>
             <textarea
               id="message"
               required
@@ -96,20 +94,20 @@ const Contact: React.FC = () => {
               value={formState.message}
               onChange={e => setFormState({ ...formState, message: e.target.value })}
               className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-              placeholder={t('contact.message_placeholder')}
+              placeholder="Your Message"
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-theme-text text-bg-body hover:bg-cyan-400"
+            className="relative w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-white text-black hover:bg-cyan-400 z-20"
           >
             {isSubmitting ? (
-              <span className="animate-pulse">{t('contact.sending')}</span>
+              <span className="animate-pulse">Sending...</span>
             ) : (
               <>
-                {t('contact.send')} <Send size={16} />
+                Send Message <Send size={16} />
               </>
             )}
           </button>

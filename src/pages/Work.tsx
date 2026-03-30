@@ -3,11 +3,9 @@ import { createPortal } from 'react-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, Play, ExternalLink } from 'lucide-react';
 import { PROJECTS, Project } from '../data/projects';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Work: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const { t } = useThemeLanguage();
 
   const modal = (
     <AnimatePresence>
@@ -29,7 +27,7 @@ const Work: React.FC = () => {
           >
             <button 
               onClick={() => setSelectedProject(null)}
-              className="absolute top-4 right-4 z-50 p-2 bg-bg-body/50 hover:bg-theme-text hover:text-bg-body rounded-full transition-colors border border-theme-border"
+              className="absolute top-4 right-4 z-50 p-2 bg-bg-body/50 hover:bg-theme-text hover:text-black rounded-full transition-colors border border-theme-border"
             >
               <X size={24} />
             </button>
@@ -45,9 +43,9 @@ const Work: React.FC = () => {
                   href={selectedProject.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4 bg-theme-text text-bg-body font-bold uppercase tracking-widest rounded-full hover:bg-cyan-400 transition-colors flex items-center gap-2 group"
+                  className="px-8 py-4 bg-theme-text text-black font-bold uppercase tracking-widest rounded-full hover:bg-cyan-400 transition-colors flex items-center gap-2 group"
                 >
-                  {t('work.open_project')} <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                  Open Project <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
                 </a>
               </div>
             </div>
@@ -82,7 +80,7 @@ const Work: React.FC = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:text-cyan-400 transition-colors group"
               >
-                {t('work.visit_website')} <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
+                Visit Website <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
           </motion.div>
@@ -99,7 +97,7 @@ const Work: React.FC = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-4xl md:text-6xl font-black mb-12 tracking-tighter"
         >
-          {t('work.title')}
+          Selected Work
         </motion.h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -119,8 +117,8 @@ const Work: React.FC = () => {
                   className="w-32 h-32 text-theme-text-dim/20 group-hover:text-cyan-400/50 group-hover:scale-110 transition-all duration-500" 
                 />
                 <div className="absolute inset-0 bg-bg-main/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="px-6 py-3 bg-theme-text text-bg-body font-bold uppercase tracking-widest rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    {t('work.view_project')}
+                  <span className="px-6 py-3 bg-theme-text text-black font-bold uppercase tracking-widest rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    View Project
                   </span>
                 </div>
               </div>

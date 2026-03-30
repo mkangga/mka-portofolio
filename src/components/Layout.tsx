@@ -4,11 +4,9 @@ import Navbar from './Navbar';
 import FluidBackground from './FluidBackground';
 import CustomCursor from './CustomCursor';
 import { motion, AnimatePresence } from 'motion/react';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
-  const { t } = useThemeLanguage();
 
   return (
     <div className="relative min-h-screen text-theme-text selection:bg-cyan-400 selection:text-black cursor-none overflow-x-hidden bg-bg-main">
@@ -31,8 +29,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </AnimatePresence>
       </main>
 
-      <footer className="relative z-10 py-8 text-center text-theme-text-dim text-xs uppercase tracking-widest">
-        <p>{t('footer.copy', { year: new Date().getFullYear().toString() })}</p>
+      <footer className="relative z-10 py-8 pb-24 md:pb-8 text-center text-theme-text-dim text-xs uppercase tracking-widest">
+        <p>© {new Date().getFullYear()} Muhammad Karim Anggara. All Systems Operational.</p>
       </footer>
     </div>
   );

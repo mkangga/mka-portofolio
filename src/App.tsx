@@ -19,8 +19,8 @@ import NotFound from './pages/NotFound';
 import SEO from './components/SEO';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
+import ScrollToTop from './components/ScrollToTop';
 import Background from './components/Background';
-import { ThemeLanguageProvider } from './context/ThemeLanguageContext';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -44,17 +44,16 @@ const AnimatedRoutes: React.FC = () => {
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <ThemeLanguageProvider>
-        <Router>
-          <SEO />
-          <CustomCursor />
-          <ScrollProgress />
-          <Background />
-          <Layout>
-            <AnimatedRoutes />
-          </Layout>
-        </Router>
-      </ThemeLanguageProvider>
+      <Router>
+        <ScrollToTop />
+        <SEO />
+        <CustomCursor />
+        <ScrollProgress />
+        <Background />
+        <Layout>
+          <AnimatedRoutes />
+        </Layout>
+      </Router>
     </HelmetProvider>
   );
 };

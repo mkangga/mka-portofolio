@@ -2,11 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Mail, MessageCircle, Linkedin, Instagram, ExternalLink } from 'lucide-react';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Connect: React.FC = () => {
-  const { t } = useThemeLanguage();
-
   const socialLinks = [
     {
       name: 'GitHub',
@@ -67,13 +64,13 @@ const Connect: React.FC = () => {
         className="text-center mb-16"
       >
         <h1 className="text-xl sm:text-6xl md:text-8xl font-black mb-4 uppercase tracking-tighter text-theme-text">
-          {t('connect.title1')}<span className="text-cyan-400">_</span>{t('connect.title2')}
+          CONNECT<span className="text-cyan-400">_</span>HUB
         </h1>
         <p className="text-theme-text-dim uppercase tracking-[0.3em] text-sm">
-          {t('connect.subtitle')}
+          Protocol: Social_Sync // Network_Access
         </p>
         <p className="mt-6 text-theme-text-muted max-w-xl mx-auto leading-relaxed">
-          {t('connect.desc')}
+          Access my digital nodes across the network. Feel free to reach out for collaborations, project inquiries, or just to say hello.
         </p>
       </motion.div>
 
@@ -108,7 +105,7 @@ const Connect: React.FC = () => {
                       <h3 className="text-xl font-bold mb-1 text-theme-text">{link.name}</h3>
                       {link.disabled && (
                         <span className="text-[10px] bg-theme-text-dim/10 px-2 py-0.5 rounded text-theme-text-dim uppercase tracking-tighter">
-                          {t('connect.offline')}
+                          Offline
                         </span>
                       )}
                     </div>
@@ -136,15 +133,15 @@ const Connect: React.FC = () => {
         className="mt-20 p-12 bg-cyan-400/5 border border-cyan-400/20 rounded-[2.5rem] text-center relative overflow-hidden"
       >
         <div className="relative z-10">
-          <h2 className="text-3xl font-bold mb-4 uppercase tracking-tight text-theme-text">{t('connect.formal_title')}</h2>
+          <h2 className="text-3xl font-bold mb-4 uppercase tracking-tight text-theme-text">Need a more formal handshake?</h2>
           <p className="text-theme-text-muted mb-8 max-w-md mx-auto">
-            {t('connect.formal_desc')}
+            For detailed project proposals or business inquiries, please use the official contact form.
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-theme-text text-bg-body font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all rounded-full"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-theme-text text-black font-bold uppercase tracking-widest hover:bg-cyan-400 transition-all rounded-full"
           >
-            {t('connect.go_contact')}
+            Go to Contact Page
           </Link>
         </div>
         

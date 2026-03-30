@@ -5,7 +5,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 interface GradientTextProps {
   text: string;
@@ -19,7 +18,6 @@ const chars = '!<>-_\\/[]{}—=+*^?#________';
 const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span', className = '', scramble = true }) => {
   const [displayText, setDisplayText] = useState(text);
   const [isHovered, setIsHovered] = useState(false);
-  const { theme } = useThemeLanguage();
 
   useEffect(() => {
     if (!scramble) return;
@@ -40,7 +38,7 @@ const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span
     return () => clearInterval(interval);
   }, [text, scramble]);
 
-  const blendMode = theme === 'dark' ? 'mix-blend-screen' : 'mix-blend-multiply';
+  const blendMode = 'mix-blend-screen';
 
   return (
     <Component 
@@ -49,7 +47,7 @@ const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span
       onMouseLeave={() => setIsHovered(false)}
     >
       <motion.span
-        className={`block bg-gradient-to-r ${theme === 'dark' ? 'from-white' : 'from-black'} via-cyan-400 to-fuchsia-500 bg-[length:200%_auto] bg-clip-text text-transparent`}
+        className={`block bg-gradient-to-r from-white via-cyan-400 to-fuchsia-500 bg-[length:200%_auto] bg-clip-text text-transparent`}
         animate={{ 
           backgroundPosition: isHovered ? ['0% center', '200% center'] : '0% center',
           textShadow: isHovered ? [

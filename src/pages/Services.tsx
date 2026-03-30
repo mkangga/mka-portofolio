@@ -2,36 +2,33 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Code, Layout, Cpu, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Services: React.FC = () => {
-  const { t } = useThemeLanguage();
-
   const services = [
     {
       id: 'web-dev',
-      title: t('services.web_dev'),
+      title: 'Web Development',
       icon: Code,
-      description: t('services.web_dev_desc'),
-      features: [t('services.web_dev_f1'), t('services.web_dev_f2'), t('services.web_dev_f3'), t('services.web_dev_f4')],
+      description: 'Building high-performance, responsive websites and web applications tailored to your specific needs.',
+      features: ['Custom Web Apps', 'E-commerce Solutions', 'CMS Integration', 'Performance Optimization'],
       color: 'text-cyan-400',
       borderColor: 'group-hover:border-cyan-400/50'
     },
     {
       id: 'ui-ux',
-      title: t('services.ui_ux'),
+      title: 'UI/UX Design',
       icon: Layout,
-      description: t('services.ui_ux_desc'),
-      features: [t('services.ui_ux_f1'), t('services.ui_ux_f2'), t('services.ui_ux_f3'), t('services.ui_ux_f4')],
+      description: 'Designing intuitive, engaging, and accessible user interfaces that provide exceptional user experiences.',
+      features: ['Wireframing & Prototyping', 'User Research', 'Visual Design', 'Interaction Design'],
       color: 'text-fuchsia-400',
       borderColor: 'group-hover:border-fuchsia-400/50'
     },
     {
       id: 'ai-integration',
-      title: t('services.ai_int'),
+      title: 'AI Integration',
       icon: Cpu,
-      description: t('services.ai_int_desc'),
-      features: [t('services.ai_int_f1'), t('services.ai_int_f2'), t('services.ai_int_f3'), t('services.ai_int_f4')],
+      description: 'Leveraging cutting-edge AI technologies to automate processes, generate content, and enhance functionality.',
+      features: ['Prompt Engineering', 'AI API Integration', 'Workflow Automation', 'Smart Features'],
       color: 'text-emerald-400',
       borderColor: 'group-hover:border-emerald-400/50'
     }
@@ -46,10 +43,10 @@ const Services: React.FC = () => {
         className="text-center mb-20"
       >
         <h1 className="text-4xl sm:text-5xl md:text-7xl font-black mb-6 tracking-tighter">
-          {t('services.title1')} <span className="text-cyan-400">{t('services.title2')}</span> <br className="hidden md:block" /> {t('services.title3')}
+          CRAFTING <span className="text-cyan-400">DIGITAL</span> <br className="hidden md:block" /> EXPERIENCES
         </h1>
         <p className="text-lg text-theme-text-muted max-w-2xl mx-auto font-light leading-relaxed">
-          {t('services.desc')}
+          I help businesses and individuals bring their visions to life through cutting-edge web development and thoughtful design.
         </p>
       </motion.div>
 
@@ -85,7 +82,7 @@ const Services: React.FC = () => {
               to="/contact" 
               className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest hover:gap-4 transition-all duration-300 group-hover:text-theme-text"
             >
-              {t('services.start_project')} <ArrowRight size={16} className={service.color} />
+              Start Project <ArrowRight size={16} className={service.color} />
             </Link>
           </motion.div>
         ))}
@@ -100,15 +97,15 @@ const Services: React.FC = () => {
       >
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
         <div className="relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black mb-6 text-theme-text">{t('services.ready_title')}</h2>
+          <h2 className="text-3xl md:text-5xl font-black mb-6 text-theme-text">Ready to elevate your brand?</h2>
           <p className="text-lg text-theme-text-muted mb-10 max-w-2xl mx-auto">
-            {t('services.ready_desc')}
+            Let's collaborate to build something extraordinary that stands out in the digital landscape.
           </p>
           <Link 
             to="/contact"
-            className="inline-block px-10 py-4 bg-theme-text text-bg-body font-bold uppercase tracking-widest rounded-full hover:bg-cyan-400 transition-colors duration-300"
+            className="inline-block px-10 py-4 bg-theme-text text-black font-bold uppercase tracking-widest rounded-full hover:bg-cyan-400 transition-colors duration-300"
           >
-            {t('services.get_quote')}
+            Get a Quote
           </Link>
         </div>
       </motion.div>
