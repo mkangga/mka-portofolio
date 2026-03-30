@@ -6,8 +6,10 @@
 
 import React, { useMemo } from 'react';
 import { motion } from 'motion/react';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const StarField = () => {
+  const { theme } = useThemeLanguage();
   // Reduced star count for performance
   const stars = useMemo(() => {
     return Array.from({ length: 15 }).map((_, i) => ({
@@ -20,6 +22,8 @@ const StarField = () => {
       opacity: Math.random() * 0.7 + 0.3
     }));
   }, []);
+
+  if (theme === 'light') return null;
 
   return (
     <div className="absolute inset-0 z-0 pointer-events-none">
@@ -52,14 +56,22 @@ const StarField = () => {
 };
 
 const FluidBackground: React.FC = () => {
+  const { theme } = useThemeLanguage();
+  const blendMode = theme === 'dark' ? 'mix-blend-screen' : 'mix-blend-multiply';
+  const opacity = theme === 'dark' ? 'opacity-20' : 'opacity-10';
+
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden bg-gradient-to-br from-[#31326f] via-[#28295c] to-[#1f2048]">
+    <div className={`fixed inset-0 -z-10 overflow-hidden transition-colors duration-500 ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-br from-[#31326f] via-[#28295c] to-[#1f2048]' 
+        : 'bg-bg-body'
+    }`}>
       
       <StarField />
 
-      {/* Blob 1: Mint - Optimized Blur (60px -> 40px) and Animation Speed */}
+      {/* Blob 1: Mint */}
       <motion.div
-        className="absolute top-[-10%] left-[-10%] w-[90vw] h-[90vw] bg-[#a8fbd3] rounded-full mix-blend-screen filter blur-[40px] opacity-30 will-change-transform"
+        className={`absolute top-[-10%] left-[-10%] w-[90vw] h-[90vw] bg-[#a8fbd3] rounded-full ${blendMode} filter blur-[60px] ${opacity} will-change-transform`}
         animate={{
           x: [0, 50, -25, 0],
           y: [0, -25, 25, 0],
@@ -74,7 +86,7 @@ const FluidBackground: React.FC = () => {
 
       {/* Blob 2: Teal */}
       <motion.div
-        className="absolute top-[20%] right-[-20%] w-[100vw] h-[80vw] bg-[#4fb7b3] rounded-full mix-blend-screen filter blur-[40px] opacity-20 will-change-transform"
+        className={`absolute top-[20%] right-[-20%] w-[100vw] h-[80vw] bg-[#4fb7b3] rounded-full ${blendMode} filter blur-[60px] ${opacity} will-change-transform`}
         animate={{
           x: [0, -50, 25, 0],
           y: [0, 50, -25, 0],
@@ -89,7 +101,7 @@ const FluidBackground: React.FC = () => {
 
       {/* Blob 3: Periwinkle */}
       <motion.div
-        className="absolute bottom-[-20%] left-[20%] w-[80vw] h-[80vw] bg-[#637ab9] rounded-full mix-blend-screen filter blur-[40px] opacity-20 will-change-transform"
+        className={`absolute bottom-[-20%] left-[20%] w-[80vw] h-[80vw] bg-[#637ab9] rounded-full ${blendMode} filter blur-[60px] ${opacity} will-change-transform`}
         animate={{
           x: [0, 75, -75, 0],
           y: [0, -50, 50, 0],
@@ -103,10 +115,10 @@ const FluidBackground: React.FC = () => {
       />
 
       {/* Static Grain Overlay */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 mix-blend-overlay pointer-events-none"></div>
+      <div className={`absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] ${theme === 'dark' ? 'opacity-10' : 'opacity-[0.03]'} mix-blend-overlay pointer-events-none`}></div>
       
       {/* Vignette */}
-      <div className="absolute inset-0 bg-radial-gradient from-transparent via-black/10 to-black/60 pointer-events-none" />
+      <div className={`absolute inset-0 bg-radial-gradient from-transparent via-black/5 to-black/${theme === 'dark' ? '60' : '10'} pointer-events-none`} />
     </div>
   );
 };

@@ -1,16 +1,19 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Home, Briefcase, User, Mail, Layers, Share2 } from 'lucide-react';
+import { Home, Briefcase, User, Mail, Layers, Share2, Sun, Moon, Globe } from 'lucide-react';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Navbar: React.FC = () => {
+  const { theme, toggleTheme, language, toggleLanguage, t } = useThemeLanguage();
+
   const links = [
-    { path: '/', label: 'Home', icon: Home },
-    { path: '/work', label: 'Work', icon: Briefcase },
-    { path: '/services', label: 'Services', icon: Layers },
-    { path: '/about', label: 'About', icon: User },
-    { path: '/connect', label: 'Connect', icon: Share2 },
-    { path: '/contact', label: 'Contact', icon: Mail },
+    { path: '/', label: t('nav.home'), icon: Home },
+    { path: '/work', label: t('nav.work'), icon: Briefcase },
+    { path: '/services', label: t('nav.services'), icon: Layers },
+    { path: '/about', label: t('nav.about'), icon: User },
+    { path: '/connect', label: t('nav.connect'), icon: Share2 },
+    { path: '/contact', label: t('nav.contact'), icon: Mail },
   ];
 
   return (
@@ -22,14 +25,14 @@ const Navbar: React.FC = () => {
         </NavLink>
 
         {/* Desktop Menu Links */}
-        <div className="hidden md:flex gap-12 text-[10px] font-bold tracking-[0.4em] uppercase">
-          {links.filter(link => link.label !== 'Connect').map((link) => (
+        <div className="hidden md:flex items-center gap-8 text-[10px] font-bold tracking-[0.4em] uppercase">
+          {links.filter(link => link.path !== '/connect').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
                 `relative transition-all duration-300 hover:text-cyan-400 ${
-                  isActive ? 'text-cyan-400' : 'text-white/60'
+                  isActive ? 'text-cyan-400' : 'text-theme-text-muted'
                 }`
               }
             >
@@ -47,27 +50,49 @@ const Navbar: React.FC = () => {
               )}
             </NavLink>
           ))}
+
+          {/* Toggles */}
+          <div className="flex items-center gap-4 ml-4 border-l border-theme-border pl-4">
+            <button onClick={toggleTheme} className="text-theme-text-muted hover:text-cyan-400 transition-colors" title="Toggle Theme">
+              {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
+            </button>
+            <button onClick={toggleLanguage} className="flex items-center gap-1 text-theme-text-muted hover:text-cyan-400 transition-colors" title="Toggle Language">
+              <Globe size={16} />
+              <span>{language.toUpperCase()}</span>
+            </button>
+          </div>
         </div>
 
         <NavLink
           to="/connect"
-          className="px-6 py-2 border border-white/20 text-[10px] font-bold tracking-widest uppercase hover:bg-white hover:text-black transition-all hidden md:block relative overflow-hidden group"
+          className="px-6 py-2 border border-theme-border text-[10px] font-bold tracking-widest uppercase hover:bg-theme-text hover:text-bg-body transition-all hidden md:block relative overflow-hidden group"
         >
-          <span className="relative z-10">Connect</span>
+          <span className="relative z-10">{t('nav.connect')}</span>
           <div className="absolute inset-0 bg-cyan-400 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 -z-0 mix-blend-difference"></div>
         </NavLink>
       </nav>
 
+      {/* Mobile Top Toggles */}
+      <div className="md:hidden fixed top-6 right-6 z-50 flex items-center gap-4 mix-blend-difference">
+        <button onClick={toggleTheme} className="text-theme-text-muted hover:text-cyan-400 transition-colors">
+          {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
+        <button onClick={toggleLanguage} className="flex items-center gap-1 text-theme-text-muted hover:text-cyan-400 transition-colors">
+          <Globe size={20} />
+          <span className="text-xs font-bold">{language.toUpperCase()}</span>
+        </button>
+      </div>
+
       {/* Mobile Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-t border-white/10 md:hidden pb-safe">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-bg-body/80 backdrop-blur-xl border-t border-theme-border md:hidden pb-safe">
         <div className="flex justify-around items-center h-16">
-          {links.filter(link => link.label !== 'Contact').map((link) => (
+          {links.filter(link => link.path !== '/contact').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
                 `flex flex-col items-center justify-center w-full h-full transition-colors ${
-                  isActive ? 'text-cyan-400' : 'text-white/40 hover:text-white/70'
+                  isActive ? 'text-cyan-400' : 'text-theme-text-dim hover:text-theme-text-muted'
                 }`
               }
             >

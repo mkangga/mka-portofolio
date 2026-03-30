@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Code, Cpu, Fingerprint } from 'lucide-react';
 import GradientText from '../components/GlitchText';
 import { Link } from 'react-router-dom';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Home: React.FC = () => {
+  const { t } = useThemeLanguage();
+
   return (
     <div className="relative z-10 min-h-[80vh] flex flex-col justify-center items-center text-center">
       <motion.div
@@ -12,32 +15,32 @@ const Home: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h2 className="text-xl md:text-3xl font-heading font-light uppercase tracking-[0.3em] opacity-60 mb-4">
-          Muhammad Karim Anggara
+        <h2 className="text-xl md:text-3xl font-heading font-light uppercase tracking-[0.3em] text-theme-text-muted mb-4">
+          {t('home.name')}
         </h2>
-        <GradientText text="AI VIBE CODER" as="h1" className="text-2xl sm:text-6xl md:text-[8vw] leading-none mb-8" />
+        <GradientText text={t('home.title')} as="h1" className="text-2xl sm:text-6xl md:text-[8vw] leading-none mb-8" />
         
-        <p className="max-w-2xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-12">
-          Leveraging AI to build the web of tomorrow. Exploring the intersection of human creativity and artificial intelligence.
+        <p className="max-w-2xl mx-auto text-theme-text-muted text-lg md:text-xl leading-relaxed mb-12">
+          {t('home.desc')}
         </p>
 
         <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          <Link to="/work" className="group relative px-8 py-4 bg-white text-black font-bold uppercase tracking-widest overflow-hidden transition-all hover:bg-cyan-400">
+          <Link to="/work" className="group relative px-8 py-4 bg-theme-text text-bg-body font-bold uppercase tracking-widest overflow-hidden transition-all hover:bg-cyan-400">
             <span className="relative z-10 flex items-center gap-2">
-              View Projects <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              {t('home.view_projects')} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </span>
           </Link>
-          <Link to="/services" className="px-8 py-4 border border-white/20 text-white font-bold uppercase tracking-widest hover:bg-white/5 transition-all">
-            My Services
+          <Link to="/services" className="px-8 py-4 border border-theme-border text-theme-text font-bold uppercase tracking-widest hover:bg-theme-text-dim transition-all">
+            {t('home.my_services')}
           </Link>
         </div>
       </motion.div>
 
       <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
         {[
-          { icon: Cpu, title: "Prompt Engineer", desc: "Crafting precise instructions for optimal AI generation." },
-          { icon: Code, title: "Web Developer", desc: "Building high-performance websites and applications." },
-          { icon: Fingerprint, title: "UI/UX Designer", desc: "Designing intuitive and engaging user experiences." }
+          { icon: Cpu, title: t('home.prompt_eng'), desc: t('home.prompt_eng_desc') },
+          { icon: Code, title: t('home.web_dev'), desc: t('home.web_dev_desc') },
+          { icon: Fingerprint, title: t('home.ui_ux'), desc: t('home.ui_ux_desc') }
         ].map((item, index) => (
           <motion.div
             key={index}
@@ -45,11 +48,11 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: index * 0.2 }}
-            className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors group"
+            className="p-8 bg-theme-text-dim/10 border border-theme-border rounded-2xl hover:bg-theme-text-dim/20 transition-colors group"
           >
             <item.icon className="w-8 h-8 text-cyan-400 mb-4 group-hover:text-fuchsia-400 transition-colors" />
-            <h3 className="font-bold mb-2 uppercase tracking-wider">{item.title}</h3>
-            <p className="text-xs text-white/40 leading-relaxed uppercase tracking-tighter">{item.desc}</p>
+            <h3 className="font-bold mb-2 uppercase tracking-wider text-theme-text">{item.title}</h3>
+            <p className="text-xs text-theme-text-muted leading-relaxed uppercase tracking-tighter">{item.desc}</p>
           </motion.div>
         ))}
       </div>

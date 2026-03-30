@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Github, Send } from 'lucide-react';
+import { useThemeLanguage } from '../context/ThemeLanguageContext';
 
 const Contact: React.FC = () => {
+  const { t } = useThemeLanguage();
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -26,10 +28,10 @@ const Contact: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-6xl md:text-8xl font-black mb-4">GET IN TOUCH</h1>
-        <p className="text-white/40 uppercase tracking-widest">Protocol: Handshake_Request // Project_Inquiry</p>
-        <p className="mt-4 text-white/60 max-w-xl mx-auto">
-          Ready to start your next project? Whether it's a new website, a UI/UX redesign, or an AI integration, I'm here to help.
+        <h1 className="text-6xl md:text-8xl font-black mb-4 text-theme-text">{t('contact.title')}</h1>
+        <p className="text-theme-text-dim uppercase tracking-widest">{t('contact.subtitle')}</p>
+        <p className="mt-4 text-theme-text-muted max-w-xl mx-auto">
+          {t('contact.desc')}
         </p>
       </motion.div>
 
@@ -40,16 +42,16 @@ const Contact: React.FC = () => {
           transition={{ delay: 0.2 }}
           className="space-y-8"
         >
-          <div className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400/50 transition-colors group">
+          <div className="p-8 bg-theme-text-dim/5 border border-theme-border rounded-2xl hover:border-cyan-400/50 transition-colors group">
             <Mail className="w-8 h-8 text-cyan-400 mb-4 group-hover:scale-110 transition-transform" />
-            <h3 className="text-xl font-bold mb-2">Email</h3>
-            <a href="mailto:me@mka.my.id" className="text-white/60 hover:text-white transition-colors">me@mka.my.id</a>
+            <h3 className="text-xl font-bold mb-2 text-theme-text">Email</h3>
+            <a href="mailto:me@mka.my.id" className="text-theme-text-muted hover:text-theme-text transition-colors">me@mka.my.id</a>
           </div>
           
           <div className="grid grid-cols-1 gap-4">
-            <a href="https://github.com/mkangga" target="_blank" rel="noopener noreferrer" className="p-8 bg-white/5 border border-white/10 rounded-2xl hover:border-cyan-400/50 transition-colors group flex flex-col items-center justify-center text-center">
+            <a href="https://github.com/mkangga" target="_blank" rel="noopener noreferrer" className="p-8 bg-theme-text-dim/5 border border-theme-border rounded-2xl hover:border-cyan-400/50 transition-colors group flex flex-col items-center justify-center text-center">
               <Github className="w-8 h-8 text-cyan-400 mb-4 group-hover:scale-110 transition-transform" />
-              <span className="text-sm font-bold uppercase tracking-wider">GitHub</span>
+              <span className="text-sm font-bold uppercase tracking-wider text-theme-text">GitHub</span>
             </a>
           </div>
         </motion.div>
@@ -62,52 +64,52 @@ const Contact: React.FC = () => {
           className="space-y-6"
         >
           <div>
-            <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest mb-2 text-white/40">Name</label>
+            <label htmlFor="name" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.name')}</label>
             <input
               type="text"
               id="name"
               required
               value={formState.name}
               onChange={e => setFormState({ ...formState, name: e.target.value })}
-              className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-cyan-400 transition-colors"
-              placeholder="ENTER_NAME"
+              className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors"
+              placeholder={t('contact.name_placeholder')}
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest mb-2 text-white/40">Email</label>
+            <label htmlFor="email" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.email')}</label>
             <input
               type="email"
               id="email"
               required
               value={formState.email}
               onChange={e => setFormState({ ...formState, email: e.target.value })}
-              className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-cyan-400 transition-colors"
-              placeholder="ENTER_EMAIL"
+              className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors"
+              placeholder={t('contact.email_placeholder')}
             />
           </div>
           <div>
-            <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest mb-2 text-white/40">Message</label>
+            <label htmlFor="message" className="block text-xs font-bold uppercase tracking-widest mb-2 text-theme-text-dim">{t('contact.message')}</label>
             <textarea
               id="message"
               required
               rows={4}
               value={formState.message}
               onChange={e => setFormState({ ...formState, message: e.target.value })}
-              className="w-full bg-white/5 border border-white/10 rounded-lg p-4 text-white focus:outline-none focus:border-cyan-400 transition-colors resize-none"
-              placeholder="ENTER_MESSAGE"
+              className="w-full bg-theme-text-dim/5 border border-theme-border rounded-lg p-4 text-theme-text focus:outline-none focus:border-cyan-400 transition-colors resize-none"
+              placeholder={t('contact.message_placeholder')}
             />
           </div>
 
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-white text-black hover:bg-cyan-400"
+            className="w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-theme-text text-bg-body hover:bg-cyan-400"
           >
             {isSubmitting ? (
-              <span className="animate-pulse">Transmitting...</span>
+              <span className="animate-pulse">{t('contact.sending')}</span>
             ) : (
               <>
-                Send Message <Send size={16} />
+                {t('contact.send')} <Send size={16} />
               </>
             )}
           </button>

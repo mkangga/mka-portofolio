@@ -20,6 +20,7 @@ import SEO from './components/SEO';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Background from './components/Background';
+import { ThemeLanguageProvider } from './context/ThemeLanguageContext';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -43,15 +44,17 @@ const AnimatedRoutes: React.FC = () => {
 const App: React.FC = () => {
   return (
     <HelmetProvider>
-      <Router>
-        <SEO />
-        <CustomCursor />
-        <ScrollProgress />
-        <Background />
-        <Layout>
-          <AnimatedRoutes />
-        </Layout>
-      </Router>
+      <ThemeLanguageProvider>
+        <Router>
+          <SEO />
+          <CustomCursor />
+          <ScrollProgress />
+          <Background />
+          <Layout>
+            <AnimatedRoutes />
+          </Layout>
+        </Router>
+      </ThemeLanguageProvider>
     </HelmetProvider>
   );
 };

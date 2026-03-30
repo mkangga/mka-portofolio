@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -110,5 +110,29 @@ export const PROJECTS: Project[] = [
     tags: ['Utility', 'Interactive', 'Tool'],
     link: 'https://wheel.mka.my.id/',
     image: 'https://picsum.photos/seed/wheel/800/600'
+  },
+  { 
+    id: '9', 
+    title: 'Kalkulator MBG', 
+    category: 'Utility',
+    role: 'Frontend Developer',
+    year: '2026', 
+    icon: Calculator, 
+    description: 'Membandingkan pengeluaran harian MBG sebesar 1,2T/hari dengan suatu nilai benda, produk dan lainnya.',
+    tags: ['Calculator', 'Utility', 'Interactive'],
+    link: 'https://kalkulatormbg.mka.my.id/',
+    image: 'https://picsum.photos/seed/kalkulator/800/600'
+  },
+  { 
+    id: '10', 
+    title: 'CatatUang', 
+    category: 'Finance',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Wallet, 
+    description: 'Pencatat Keuangan Pribadimu.',
+    tags: ['Finance', 'Tracker', 'Web App'],
+    link: 'https://catatuang.mka.my.id/',
+    image: 'https://picsum.photos/seed/catatuang/800/600'
   }
 ];
