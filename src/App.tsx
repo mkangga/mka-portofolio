@@ -17,10 +17,8 @@ import Connect from './pages/Connect';
 import ProjectDetail from './pages/ProjectDetail';
 import NotFound from './pages/NotFound';
 import SEO from './components/SEO';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import ScrollToTop from './components/ScrollToTop';
-import Background from './components/Background';
 
 const AnimatedRoutes: React.FC = () => {
   const location = useLocation();
@@ -47,9 +45,7 @@ const App: React.FC = () => {
       <Router>
         <ScrollToTop />
         <SEO />
-        <CustomCursor />
         <ScrollProgress />
-        <Background />
         <Layout>
           <AnimatedRoutes />
         </Layout>

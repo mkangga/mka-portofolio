@@ -25,14 +25,6 @@
 
 body {
   @apply bg-bg-body text-theme-text font-sans overflow-x-hidden transition-colors duration-500;
-  cursor: none; /* Hide default cursor for custom cursor */
-}
-
-/* Re-enable default cursor for touch devices */
-@media (pointer: coarse) {
-  body {
-    cursor: auto;
-  }
 }
 
 /* Smooth scrolling */

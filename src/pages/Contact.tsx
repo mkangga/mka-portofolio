@@ -26,14 +26,14 @@ const Contact: React.FC = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-5xl md:text-8xl font-black mb-4 text-theme-text">CONTACT</h1>
-        <p className="text-theme-text-dim uppercase tracking-widest">Let's build something together</p>
-        <p className="mt-4 text-theme-text-muted max-w-xl mx-auto">
+        <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-4 text-theme-text">CONTACT</h1>
+        <p className="text-theme-text-dim uppercase tracking-widest text-sm sm:text-base">Let's build something together</p>
+        <p className="mt-4 text-theme-text-muted max-w-xl mx-auto px-4">
           Have a project in mind or just want to say hi? Feel free to reach out.
         </p>
       </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -101,7 +101,7 @@ const Contact: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="relative w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-white text-black hover:bg-cyan-400 z-20"
+            className="relative w-full py-4 font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-all bg-cyan-400 text-black hover:bg-white z-20"
           >
             {isSubmitting ? (
               <span className="animate-pulse">Sending...</span>
