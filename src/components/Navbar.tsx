@@ -22,13 +22,13 @@ const Navbar: React.FC = () => {
         </NavLink>
 
         {/* Desktop Menu Links */}
-        <div className="hidden md:flex items-center gap-8 text-[10px] font-bold tracking-[0.4em] uppercase">
+        <div className="hidden md:flex items-center gap-4 text-[10px] font-bold tracking-[0.4em] uppercase">
           {links.filter(link => link.path !== '/connect').map((link) => (
             <NavLink
               key={link.path}
               to={link.path}
               className={({ isActive }) =>
-                `relative transition-all duration-300 hover:text-cyan-400 ${
+                `relative px-4 py-2 transition-all duration-300 hover:text-cyan-400 ${
                   isActive ? 'text-cyan-400' : 'text-theme-text-muted'
                 }`
               }
@@ -39,7 +39,7 @@ const Navbar: React.FC = () => {
                   {isActive && (
                     <motion.div
                       layoutId="navGlow"
-                      className="absolute -bottom-2 left-0 right-0 h-px bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
+                      className="absolute bottom-0 left-4 right-4 h-px bg-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.8)]"
                       transition={{ type: "spring", stiffness: 300, damping: 30 }}
                     />
                   )}
