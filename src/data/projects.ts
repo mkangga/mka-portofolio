@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -134,5 +134,30 @@ export const PROJECTS: Project[] = [
     tags: ['Finance', 'Tracker', 'Web App'],
     link: 'https://catatuang.mka.my.id/',
     image: 'https://picsum.photos/seed/catatuang/800/600'
+  },
+  { 
+    id: '11', 
+    title: 'Antree', 
+    category: 'Utility',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: ListTodo, 
+    description: 'Sistem antrean online berbasis kode dan QR untuk efisiensi manajemen antrean secara digital.',
+    tags: ['Queue System', 'QR Code', 'Utility', 'Web App'],
+    link: 'https://antre.mka.my.id/',
+    image: 'https://picsum.photos/seed/antre/800/600'
+  },
+  { 
+    id: '12', 
+    title: 'LiveVote', 
+    category: 'Interactive',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Vote, 
+    description: 'Platform serbaguna untuk membuat voting, formulir, polling, dan kuis secara live dan interaktif.',
+    tags: ['Voting', 'Polling', 'Interactive', 'Form'],
+    link: 'https://livevote.mka.my.id/',
+    image: 'https://picsum.photos/seed/livevote/800/600'
   }
 ];
+
