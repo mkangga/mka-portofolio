@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -158,6 +158,18 @@ export const PROJECTS: Project[] = [
     tags: ['Voting', 'Polling', 'Interactive', 'Form'],
     link: 'https://livevote.mka.my.id/',
     image: 'https://picsum.photos/seed/livevote/800/600'
+  },
+  { 
+    id: '13', 
+    title: 'PRESENCE SYSTEM', 
+    category: 'Management',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: QrCode, 
+    description: 'Website absensi digital berbasis QR Code yang memungkinkan admin mengelola data peserta dan mencatat kehadiran secara real-time. Peserta dapat mengakses QR absensi pribadi tanpa login melalui verifikasi data.',
+    tags: ['Attendance', 'QR Code', 'Real-time', 'Management'],
+    link: 'https://presence.mka.my.id/',
+    image: 'https://picsum.photos/seed/presence/800/600'
   }
 ];
 
