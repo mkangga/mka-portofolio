@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode, MessageSquare } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -170,6 +170,19 @@ export const PROJECTS: Project[] = [
     tags: ['Attendance', 'QR Code', 'Real-time', 'Management'],
     link: 'https://presence.mka.my.id/',
     image: 'https://picsum.photos/seed/presence/800/600'
+  },
+  { 
+    id: '14', 
+    title: 'SECONDTEXT', 
+    category: 'Communication',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: MessageSquare, 
+    description: 'SecondText is a modern real-time chat platform designed with a mobile-first experience, seamless messaging, and a polished multi-device interface.',
+    tags: ['Real-time', 'Chat', 'Mobile-First', 'Web App'],
+    link: 'https://chat.mka.my.id/',
+    image: 'https://picsum.photos/seed/chat/800/600'
   }
 ];
+
 
