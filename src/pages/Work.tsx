@@ -6,6 +6,13 @@ import { PROJECTS, Project } from '../data/projects';
 
 const Work: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeCategory, setActiveCategory] = useState<string>('All');
+
+  const categories = ['All', ...new Set(PROJECTS.map(p => p.category))];
+
+  const filteredProjects = activeCategory === 'All' 
+    ? PROJECTS 
+    : PROJECTS.filter(p => p.category === activeCategory);
 
   const modal = (
     <AnimatePresence>
@@ -92,44 +99,76 @@ const Work: React.FC = () => {
   return (
     <div className="pt-12 pb-24 md:pb-12">
       <div className="max-w-7xl mx-auto px-4 md:px-6">
-        <motion.h1 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-black mb-12 tracking-tighter"
         >
-          Selected Work
-        </motion.h1>
+          <h1 className="text-4xl md:text-6xl font-black mb-4 tracking-tighter">
+            Selected Work
+          </h1>
+          <p className="text-theme-text-muted mb-12 max-w-2xl font-light">
+            Exploring digital works ranging from personal identity and e-commerce to modern management systems and creative simulations.
+          </p>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {PROJECTS.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-               onClick={() => setSelectedProject(project)}
-              className="group cursor-pointer"
+        {/* Category Filter */}
+        <motion.div 
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="flex overflow-x-auto pb-4 md:pb-0 hide-scrollbar gap-3 mb-12 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide"
+        >
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`px-6 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-300 border whitespace-nowrap ${
+                activeCategory === category
+                  ? 'bg-cyan-400 text-black border-cyan-400 shadow-[0_0_20px_rgba(34,211,238,0.3)]'
+                  : 'border-theme-border text-theme-text-muted hover:border-cyan-400 hover:text-white'
+              }`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-theme-text-dim/5 border border-theme-border mb-4 flex items-center justify-center">
-                <project.icon 
-                  strokeWidth={1}
-                  className="w-32 h-32 text-theme-text-dim/20 group-hover:text-cyan-400/50 group-hover:scale-110 transition-all duration-500" 
-                />
-                <div className="absolute inset-0 bg-bg-main/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <span className="px-6 py-3 bg-theme-text text-black font-bold uppercase tracking-widest rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                    View Project
-                  </span>
-                </div>
-              </div>
-              
-              <h3 className="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors text-theme-text">{project.title}</h3>
-              <p className="text-sm text-theme-text-muted uppercase tracking-wider">
-                {project.category} {project.role && `— ${project.role}`} — {project.year}
-              </p>
-            </motion.div>
+              {category}
+            </button>
           ))}
-        </div>
+        </motion.div>
+
+        <motion.div 
+          layout
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredProjects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                layout
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setSelectedProject(project)}
+                className="group cursor-pointer"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-theme-text-dim/5 border border-theme-border mb-4 flex items-center justify-center">
+                  <project.icon 
+                    strokeWidth={1}
+                    className="w-32 h-32 text-theme-text-dim/20 group-hover:text-cyan-400/50 group-hover:scale-110 transition-all duration-500" 
+                  />
+                  <div className="absolute inset-0 bg-bg-main/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                    <span className="px-6 py-3 bg-theme-text text-black font-bold uppercase tracking-widest rounded-full transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      View Project
+                    </span>
+                  </div>
+                </div>
+                
+                <h3 className="text-xl font-bold mb-1 group-hover:text-cyan-400 transition-colors text-theme-text">{project.title}</h3>
+                <p className="text-sm text-theme-text-muted uppercase tracking-wider">
+                  {project.category} {project.role && `— ${project.role}`} — {project.year}
+                </p>
+              </motion.div>
+            ))}
+          </AnimatePresence>
+        </motion.div>
       </div>
       {createPortal(modal, document.body)}
     </div>

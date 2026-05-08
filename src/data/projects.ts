@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode, MessageSquare } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -70,7 +70,7 @@ export const PROJECTS: Project[] = [
     role: 'Visual Storyteller',
     year: '2026', 
     icon: Flag, 
-    description: 'Bagaimana jika Indonesia tidak pernah dijajah? Sebuah eksplorasi visual dan naratif tentang sejarah alternatif Nusantara yang berdaulat penuh.',
+    description: 'What if Indonesia was never colonized? A visual and narrative exploration of an alternative history of the sovereign Nusantara.',
     tags: ['Storytelling', 'History', 'Interactive', 'Web Design'],
     link: 'http://nusantaramerdeka.mka.my.id/',
     image: 'https://picsum.photos/seed/nusantara/800/600'
@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
     role: 'Research & Design',
     year: '2026', 
     icon: Rocket, 
-    description: 'Dari mimpi Jules Verne hingga roket SpaceX — umat manusia bersiap menjadi spesies multiplanet. Visualisasi perjalanan manusia menuju Planet Merah.',
+    description: 'From Jules Verne\'s dreams to SpaceX rockets — humanity prepares to become a multiplanetary species. A visualization of the journey to the Red Planet.',
     tags: ['Space', 'Science', 'Visualization', 'Future'],
     link: 'https://koloni-mars.mka.my.id/',
     image: 'https://picsum.photos/seed/mars/800/600'
@@ -118,7 +118,7 @@ export const PROJECTS: Project[] = [
     role: 'Frontend Developer',
     year: '2026', 
     icon: Calculator, 
-    description: 'Membandingkan pengeluaran harian MBG sebesar 1,2T/hari dengan suatu nilai benda, produk dan lainnya.',
+    description: 'Comparing the daily MBG expenditure of 1.2T/day with various items, products, and more.',
     tags: ['Calculator', 'Utility', 'Interactive'],
     link: 'https://kalkulatormbg.mka.my.id/',
     image: 'https://picsum.photos/seed/kalkulator/800/600'
@@ -130,7 +130,7 @@ export const PROJECTS: Project[] = [
     role: 'Full Stack Developer',
     year: '2026', 
     icon: Wallet, 
-    description: 'Pencatat Keuangan Pribadimu.',
+    description: 'Your Personal Financial Tracker.',
     tags: ['Finance', 'Tracker', 'Web App'],
     link: 'https://catatuang.mka.my.id/',
     image: 'https://picsum.photos/seed/catatuang/800/600'
@@ -142,7 +142,7 @@ export const PROJECTS: Project[] = [
     role: 'Full Stack Developer',
     year: '2026', 
     icon: ListTodo, 
-    description: 'Sistem antrean online berbasis kode dan QR untuk efisiensi manajemen antrean secara digital.',
+    description: 'Online queue system based on codes and QR for digital queue management efficiency.',
     tags: ['Queue System', 'QR Code', 'Utility', 'Web App'],
     link: 'https://antre.mka.my.id/',
     image: 'https://picsum.photos/seed/antre/800/600'
@@ -154,7 +154,7 @@ export const PROJECTS: Project[] = [
     role: 'Full Stack Developer',
     year: '2026', 
     icon: Vote, 
-    description: 'Platform serbaguna untuk membuat voting, formulir, polling, dan kuis secara live dan interaktif.',
+    description: 'Versatile platform for creating live and interactive voting, forms, polls, and quizzes.',
     tags: ['Voting', 'Polling', 'Interactive', 'Form'],
     link: 'https://livevote.mka.my.id/',
     image: 'https://picsum.photos/seed/livevote/800/600'
@@ -166,7 +166,7 @@ export const PROJECTS: Project[] = [
     role: 'Full Stack Developer',
     year: '2026', 
     icon: QrCode, 
-    description: 'Website absensi digital berbasis QR Code yang memungkinkan admin mengelola data peserta dan mencatat kehadiran secara real-time. Peserta dapat mengakses QR absensi pribadi tanpa login melalui verifikasi data.',
+    description: 'A digital attendance website based on QR Codes that allows admins to manage participant data and record attendance in real-time. Participants can access their personal attendance QR without logging in through data verification.',
     tags: ['Attendance', 'QR Code', 'Real-time', 'Management'],
     link: 'https://presence.mka.my.id/',
     image: 'https://picsum.photos/seed/presence/800/600'
@@ -182,6 +182,18 @@ export const PROJECTS: Project[] = [
     tags: ['Real-time', 'Chat', 'Mobile-First', 'Web App'],
     link: 'https://chat.mka.my.id/',
     image: 'https://picsum.photos/seed/chat/800/600'
+  },
+  { 
+    id: '15', 
+    title: 'Nontara', 
+    category: 'Entertainment',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Film, 
+    description: 'Cinematic movie watchlist platform built with React and Firebase, designed for modern and premium watchlist management with TMDB API integration.',
+    tags: ['React', 'Firebase', 'TMDB API', 'Watchlist'],
+    link: 'https://nontara.mka.my.id/',
+    image: 'https://picsum.photos/seed/nontara/800/600'
   }
 ];
 
