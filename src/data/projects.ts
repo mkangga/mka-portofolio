@@ -53,7 +53,7 @@ export const PROJECTS: Project[] = [
   },
   { 
     id: '4', 
-    title: 'Gift Box Website', 
+    title: 'GIFT BOX WEBSITE (DEV)', 
     category: 'Interactive Experience',
     role: 'UI Engineer',
     year: '2026', 
@@ -89,7 +89,7 @@ export const PROJECTS: Project[] = [
   },
   { 
     id: '7', 
-    title: 'Digital Gift Box', 
+    title: 'DIGITAL GIFT BOX (PUBLIC)', 
     category: 'Interactive Experience',
     role: 'Full Stack Developer',
     year: '2026', 
@@ -110,18 +110,6 @@ export const PROJECTS: Project[] = [
     tags: ['Utility', 'Interactive', 'Tool'],
     link: 'https://wheel.mka.my.id/',
     image: 'https://picsum.photos/seed/wheel/800/600'
-  },
-  { 
-    id: '9', 
-    title: 'Kalkulator MBG', 
-    category: 'Utility',
-    role: 'Frontend Developer',
-    year: '2026', 
-    icon: Calculator, 
-    description: 'Comparing the daily MBG expenditure of 1.2T/day with various items, products, and more.',
-    tags: ['Calculator', 'Utility', 'Interactive'],
-    link: 'https://kalkulatormbg.mka.my.id/',
-    image: 'https://picsum.photos/seed/kalkulator/800/600'
   },
   { 
     id: '10', 
