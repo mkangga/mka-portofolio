@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, Flag, Rocket, CircleDot, Calculator, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -64,30 +64,6 @@ export const PROJECTS: Project[] = [
     image: 'https://picsum.photos/seed/gift/800/600'
   },
   { 
-    id: '5', 
-    title: 'Nusantara Merdeka', 
-    category: 'Alternate History',
-    role: 'Visual Storyteller',
-    year: '2026', 
-    icon: Flag, 
-    description: 'What if Indonesia was never colonized? A visual and narrative exploration of an alternative history of the sovereign Nusantara.',
-    tags: ['Storytelling', 'History', 'Interactive', 'Web Design'],
-    link: 'http://nusantaramerdeka.mka.my.id/',
-    image: 'https://picsum.photos/seed/nusantara/800/600'
-  },
-  { 
-    id: '6', 
-    title: 'Kolonisasi Mars', 
-    category: 'Space Exploration',
-    role: 'Research & Design',
-    year: '2026', 
-    icon: Rocket, 
-    description: 'From Jules Verne\'s dreams to SpaceX rockets — humanity prepares to become a multiplanetary species. A visualization of the journey to the Red Planet.',
-    tags: ['Space', 'Science', 'Visualization', 'Future'],
-    link: 'https://koloni-mars.mka.my.id/',
-    image: 'https://picsum.photos/seed/mars/800/600'
-  },
-  { 
     id: '7', 
     title: 'DIGITAL GIFT BOX (PUBLIC)', 
     category: 'Interactive Experience',
@@ -126,7 +102,7 @@ export const PROJECTS: Project[] = [
   { 
     id: '11', 
     title: 'Antree', 
-    category: 'Utility',
+    category: 'Management',
     role: 'Full Stack Developer',
     year: '2026', 
     icon: ListTodo, 
@@ -138,7 +114,7 @@ export const PROJECTS: Project[] = [
   { 
     id: '12', 
     title: 'LiveVote', 
-    category: 'Interactive',
+    category: 'Interactive Experience',
     role: 'Full Stack Developer',
     year: '2026', 
     icon: Vote, 

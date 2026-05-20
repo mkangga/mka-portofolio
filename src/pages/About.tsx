@@ -23,9 +23,10 @@ const About: React.FC = () => {
             DECODING <br/><span className="text-cyan-400">THE VIBE</span>
           </h1>
           <div className="space-y-6 text-lg text-theme-text-muted leading-relaxed font-light">
-            <p dangerouslySetInnerHTML={{ __html: 'I am <strong class="text-white">Muhammad Karim Anggara</strong>, a beginner AI Vibe Coder. My journey is just beginning, but my vision is clear: to leverage the power of Artificial Intelligence to bring digital ideas to life.' }} />
-            <p>I may be new to the game, but I specialize in orchestrating AI tools to build functional, beautiful websites. I believe that with the right prompts and a creative mindset, anyone can become a creator in this new digital era.</p>
-            <p>I'm constantly learning, experimenting, and pushing the boundaries of what an "AI Vibe Coder" can achieve.</p>
+            <p dangerouslySetInnerHTML={{ __html: 'I’m <strong class="text-white">Muhammad Karim Anggara</strong>, an aspiring AI-Assisted Web Developer focused on building modern digital experiences with the help of Artificial Intelligence.' }} />
+            <p>I specialize in combining creativity, problem-solving, and AI-powered workflows to turn ideas into functional and visually engaging websites. While I’m still growing as a developer, I’m deeply passionate about learning, experimenting, and continuously improving my skills.</p>
+            <p>My approach centers around leveraging modern AI tools to accelerate development, enhance creativity, and bring concepts to life more efficiently.</p>
+            <p>I believe the future of web development lies in the collaboration between human creativity and artificial intelligence — and I’m excited to be part of that evolution.</p>
           </div>
 
           <div className="mt-12 p-6 bg-theme-text-dim/5 border border-theme-border rounded-xl font-mono text-sm text-cyan-400/80">
