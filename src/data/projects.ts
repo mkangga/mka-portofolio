@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film, UploadCloud } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -158,6 +158,18 @@ export const PROJECTS: Project[] = [
     tags: ['React', 'Firebase', 'TMDB API', 'Watchlist'],
     link: 'https://nontara.mka.my.id/',
     image: 'https://picsum.photos/seed/nontara/800/600'
+  },
+  { 
+    id: '16', 
+    title: 'Instant Site Deployer', 
+    category: 'Utility',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: UploadCloud, 
+    description: 'Paste HTML/CSS/JS or SPA code to instantly generate a live shareable URL and preview website.',
+    tags: ['Deployment', 'HTML/CSS/JS', 'SPA', 'Utility'],
+    link: 'https://instadeploy.mka.my.id/',
+    image: 'https://picsum.photos/seed/instadeploy/800/600'
   }
 ];
 
