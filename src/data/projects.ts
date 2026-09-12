@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film, UploadCloud } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film, UploadCloud, BookOpen, Bot } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -170,6 +170,30 @@ export const PROJECTS: Project[] = [
     tags: ['Deployment', 'HTML/CSS/JS', 'SPA', 'Utility'],
     link: 'https://instadeploy.mka.my.id/',
     image: 'https://picsum.photos/seed/instadeploy/800/600'
+  },
+  { 
+    id: '17', 
+    title: 'ILMORA LMS', 
+    category: 'Education',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: BookOpen, 
+    description: 'A comprehensive, feature-rich Learning Management System (LMS) designed to deliver a seamless online educational experience. Built with a focus on modern user experience, it enables instructors to manage interactive courses, track student progress, and deliver rich multimedia lessons while offering learners a clean, intuitive, and highly engaging interface to master new skills.',
+    tags: ['LMS', 'Education', 'Online Learning', 'Web Application', 'Management'],
+    link: 'https://lms.mka.my.id',
+    image: 'https://picsum.photos/seed/lms/800/600'
+  },
+  { 
+    id: '18', 
+    title: 'OpenChat AI', 
+    category: 'Artificial Intelligence',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Bot, 
+    description: 'A versatile, client-centric AI chat playground that allows users to connect their own API keys from multiple top-tier intelligence providers. Designed with a clean, responsive chat interface, it enables seamless switching between model families, custom parameter fine-tuning, and robust conversation management, offering full control without server-side storage of sensitive credentials.',
+    tags: ['AI', 'Chatbot', 'API Integration', 'LLM', 'Utility'],
+    link: 'https://openchat.mka.my.id',
+    image: 'https://picsum.photos/seed/openchat/800/600'
   }
 ];
 
