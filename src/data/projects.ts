@@ -1,4 +1,4 @@
-import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film, UploadCloud, BookOpen, Bot } from 'lucide-react';
+import { User, ShoppingBag, Globe, Gift, CircleDot, Wallet, ListTodo, Vote, QrCode, MessageSquare, Film, UploadCloud, BookOpen, Bot, Receipt } from 'lucide-react';
 import React from 'react';
 
 export interface Project {
@@ -194,6 +194,18 @@ export const PROJECTS: Project[] = [
     tags: ['AI', 'Chatbot', 'API Integration', 'LLM', 'Utility'],
     link: 'https://openchat.mka.my.id',
     image: 'https://picsum.photos/seed/openchat/800/600'
+  },
+  { 
+    id: '19', 
+    title: 'MacroPOS', 
+    category: 'Point of Sale',
+    role: 'Full Stack Developer',
+    year: '2026', 
+    icon: Receipt, 
+    description: 'A smart, 100% offline-first Point of Sale (POS) system engineered for retail stores, minimarkets, and MSMEs. Features instant cashier transactions, thermal receipt printing, cash drawer audits, and seamless background cloud synchronization when connected.',
+    tags: ['Point of Sale', 'Offline-First', 'Retail', 'Cloud Sync', 'Web App'],
+    link: 'https://macropos.mka.my.id',
+    image: 'https://picsum.photos/seed/macropos/800/600'
   }
 ];
 
