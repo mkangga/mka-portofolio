@@ -2,8 +2,10 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Mail, MessageCircle, Linkedin, Instagram, ExternalLink } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Connect: React.FC = () => {
+
   const socialLinks = [
     {
       name: 'GitHub',
@@ -58,7 +60,18 @@ const Connect: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto pt-12 pb-20">
+      <SEO 
+        title="Connect & Digital Network Hub – MKA.DEV"
+        description="Temukan semua kanal sosial, GitHub, WhatsApp, LinkedIn, dan email resmi Muhammad Karim Anggara (MKA.DEV)."
+        keywords="connect muhammad karim anggara, github mkangga, linkedin karim anggara, twitter mka dev"
+        canonicalPath="/connect"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Connect', path: '/connect' }
+        ]}
+      />
       <motion.div
+
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"

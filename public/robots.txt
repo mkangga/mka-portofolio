@@ -1,0 +1,17 @@
+# Robots.txt for Muhammad Karim Anggara (MKA.DEV)
+# Automated crawler indexing directives
+
+User-agent: *
+Allow: /
+Disallow: /api/
+
+User-agent: Googlebot
+Allow: /
+Allow: /work/
+Allow: /images/
+
+User-agent: Googlebot-Image
+Allow: /
+
+# Canonical Sitemap location for Google Search Console & Search Engines
+Sitemap: https://www.mka.my.id/sitemap.xml

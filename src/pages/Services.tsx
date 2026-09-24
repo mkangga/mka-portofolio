@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Code, Layout, Cpu, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 
 const Services: React.FC = () => {
   const services = [
+
     {
       id: 'web-dev',
       title: 'Web Development',
@@ -36,7 +38,18 @@ const Services: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto pt-12 pb-24">
+      <SEO 
+        title="Web Development & AI Engineering Services"
+        description="Layanan web development, perancangan antarmuka UI/UX modern, prompt engineering, dan integrasi API AI cerdas oleh Muhammad Karim Anggara (MKA.DEV)."
+        keywords="jasa web developer, jasa pembuatan website, ai developer indonesia, react frontend dev, ui ux designer"
+        canonicalPath="/services"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Services', path: '/services' }
+        ]}
+      />
       <motion.div
+
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}

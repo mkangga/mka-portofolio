@@ -15,6 +15,7 @@ import Services from './pages/Services';
 import Contact from './pages/Contact';
 import Connect from './pages/Connect';
 import ProjectDetail from './pages/ProjectDetail';
+import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
 import SEO from './components/SEO';
 import ScrollProgress from './components/ScrollProgress';
@@ -34,11 +35,13 @@ const AnimatedRoutes: React.FC = () => {
         <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
         <Route path="/contact" element={<PageWrapper><Contact /></PageWrapper>} />
         <Route path="/connect" element={<PageWrapper><Connect /></PageWrapper>} />
+        <Route path="/sitemap" element={<PageWrapper><Sitemap /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
   );
 };
+
 
 const App: React.FC = () => {
   return (

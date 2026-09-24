@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Mail, Github, Send } from 'lucide-react';
+import SEO from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState({ name: '', email: '', message: '' });
@@ -21,7 +22,18 @@ const Contact: React.FC = () => {
 
   return (
     <div className="max-w-4xl mx-auto pt-12 pb-20">
+      <SEO 
+        title="Contact Muhammad Karim Anggara – Hire & Collaborate"
+        description="Hubungi Muhammad Karim Anggara (MKA.DEV) untuk konsultasi proyek web, AI vibe coding, integrasi sistem, atau kerja sama digital."
+        keywords="kontak muhammad karim anggara, hire web developer, whatsapp developer indonesia, jasa coding"
+        canonicalPath="/contact"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'Contact', path: '/contact' }
+        ]}
+      />
       <motion.div
+
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"

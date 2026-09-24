@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.mka.my.id/</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/services</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/about</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/connect</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/contact</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/sitemap</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/1</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/portfolio/800/600</image:loc>
+      <image:title>Self Portfolio – Personal Identity</image:title>
+      <image:caption>A personal showcase of my journey as an AI Vibe Coder.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/2</loc>
+    <lastmod>2025-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/store/800/600</image:loc>
+      <image:title>MKA Store – E-Commerce</image:title>
+      <image:caption>A streamlined e-commerce platform designed for digital goods.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/3</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/solar/800/600</image:loc>
+      <image:title>Solar System – Simulation</image:title>
+      <image:caption>An interactive 3D simulation of our solar system.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/4</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/gift/800/600</image:loc>
+      <image:title>GIFT BOX WEBSITE (DEV) – Interactive Experience</image:title>
+      <image:caption>A secure gift box experience where users unlock surprises using unique credentials.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/7</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/gift2/800/600</image:loc>
+      <image:title>DIGITAL GIFT BOX (PUBLIC) – Interactive Experience</image:title>
+      <image:caption>Create magical, personalized digital gift experiences for your loved ones.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/8</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/wheel/800/600</image:loc>
+      <image:title>Random Wheel Picker – Utility</image:title>
+      <image:caption>A fun and interactive random wheel picker for decision making.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/10</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/catatuang/800/600</image:loc>
+      <image:title>CatatUang – Finance</image:title>
+      <image:caption>Your Personal Financial Tracker.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/11</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/antre/800/600</image:loc>
+      <image:title>Antree – Management</image:title>
+      <image:caption>Online queue system based on codes and QR for digital queue management efficiency.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/12</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/livevote/800/600</image:loc>
+      <image:title>LiveVote – Interactive Experience</image:title>
+      <image:caption>Versatile platform for creating live and interactive voting, forms, polls, and quizzes.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/13</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/presence/800/600</image:loc>
+      <image:title>PRESENCE SYSTEM – Management</image:title>
+      <image:caption>A digital attendance website based on QR Codes that allows admins to manage participant data and record attendance in real-time.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/14</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/chat/800/600</image:loc>
+      <image:title>SECONDTEXT – Communication</image:title>
+      <image:caption>SecondText is a modern real-time chat platform designed with a mobile-first experience.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/15</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/nontara/800/600</image:loc>
+      <image:title>Nontara – Entertainment</image:title>
+      <image:caption>Cinematic movie watchlist platform built with React and Firebase.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/16</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/instadeploy/800/600</image:loc>
+      <image:title>Instant Site Deployer – Utility</image:title>
+      <image:caption>Paste HTML/CSS/JS or SPA code to instantly generate a live shareable URL and preview website.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/17</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/lms/800/600</image:loc>
+      <image:title>ILMORA LMS – Education</image:title>
+      <image:caption>A comprehensive, feature-rich Learning Management System designed to deliver a seamless online educational experience.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/18</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/openchat/800/600</image:loc>
+      <image:title>OpenChat AI – Artificial Intelligence</image:title>
+      <image:caption>A versatile, client-centric AI chat playground that allows users to connect their own API keys.</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.mka.my.id/work/19</loc>
+    <lastmod>2026-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://picsum.photos/seed/macropos/800/600</image:loc>
+      <image:title>MacroPOS – Point of Sale</image:title>
+      <image:caption>A smart, 100% offline-first Point of Sale system engineered for retail stores and MSMEs.</image:caption>
+    </image:image>
+  </url>
+</urlset>

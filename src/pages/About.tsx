@@ -2,9 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Terminal, Database, Globe, Layers, Cpu, Zap } from 'lucide-react';
 import TechStack from '../components/TechStack';
+import SEO from '../components/SEO';
 
 const About: React.FC = () => {
   const skills = [
+
     { category: "Frontend", items: ["HTML", "CSS", "JavaScript", "React (Learning)", "Tailwind CSS"], icon: Globe },
     { category: "AI Tools", items: ["ChatGPT", "Claude", "Gemini", "V0", "Bolt.new"], icon: Zap },
     { category: "Focus", items: ["Prompt Engineering", "AI-Assisted Dev", "Rapid Prototyping"], icon: Cpu },
@@ -13,7 +15,18 @@ const About: React.FC = () => {
 
   return (
     <div className="max-w-6xl mx-auto pt-12">
+      <SEO 
+        title="About Muhammad Karim Anggara – AI Vibe Coder & Developer"
+        description="Pelajari latar belakang, keahlian teknologi frontend, workflow kecerdasan buatan, dan pendekatan engineering Muhammad Karim Anggara (MKA.DEV)."
+        keywords="about muhammad karim anggara, profil mka dev, ai vibe coder indonesia, web developer background"
+        canonicalPath="/about"
+        breadcrumbs={[
+          { name: 'Home', path: '/' },
+          { name: 'About', path: '/about' }
+        ]}
+      />
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start mb-24">
+
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
